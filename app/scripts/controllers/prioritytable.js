@@ -8,10 +8,11 @@
  * Controller of the heyOmaegithubioApp
  */
 angular.module('heyOmaegithubioApp')
-  .controller('PrioritytableCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('PrioritytableCtrl', function ($scope, $http) {
+    $http.get('../assets/priority.json').success(function (data, status, headers, config) {
+    	$scope.priorityData = data;
+    	console.log($scope.priorityData);
+    }).error(function (data, status){
+		alert("Error status : " + status);
+	});
   });

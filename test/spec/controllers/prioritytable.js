@@ -6,17 +6,21 @@ describe('Controller: PrioritytableCtrl', function () {
   beforeEach(module('heyOmaegithubioApp'));
 
   var PrioritytableCtrl,
-    scope;
+    scope,
+    $httpBackend;
 
   // Initialize the controller and a mock scope
-  beforeEach(inject(function ($controller, $rootScope) {
+  beforeEach(inject(function ($controller, $rootScope, $injector) {
+     // Set up the mock http service responses
+     $httpBackend = $injector.get('$httpBackend');
+
     scope = $rootScope.$new();
     PrioritytableCtrl = $controller('PrioritytableCtrl', {
       $scope: scope
     });
   }));
 
-  it('should attach a list of awesomeThings to the scope', function () {
-    expect(scope.awesomeThings.length).toBe(3);
+  it('priorityData should have data', function () {
+    expect(scope.priorityData.length).toBe(5);
   });
 });

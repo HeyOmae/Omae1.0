@@ -1,7 +1,7 @@
 {
-    "metatype": {
-        "a": {
-            "human": {
+	"a": {
+		"metatype": {
+			"human": {
                 "special": 9
             },
             "elf": {
@@ -16,61 +16,9 @@
             "troll": {
                 "special": 5
             }
-        },
-        "b": {
-            "human": {
-                "special": 7
-            },
-            "elf": {
-                "special": 6
-            },
-            "dwarf": {
-                "special": 4
-            },
-            "ork": {
-                "special": 4
-            },
-            "troll": {
-                "special": 0
-            }
-        },
-        "c": {
-            "human": {
-                "special": 5
-            },
-            "elf": {
-                "special": 3
-            },
-            "dwarf": {
-                "special": 1
-            },
-            "ork": {
-                "special": 0
-            }
-        },
-        "d": {
-            "human": {
-                "special": 3
-            },
-            "elf": {
-                "special": 0
-            }
-        },
-        "e": {
-            "human": {
-                "special": 1
-            }
-        }
-    },
-    "attibutes": {
-        "a": 24,
-        "b": 20,
-        "c": 16,
-        "d": 14,
-        "e": 12
-    },
-    "magic": {
-        "a": {
+		},
+	    "attibutes": 24,
+	    "magic": {
             "mage": {
                 "magic": 6,
                 "skills": {
@@ -99,7 +47,32 @@
                 "complexform": 5
             }
         },
-        "b": {
+        "skills": {
+            "skillpoints": 46,
+            "grouppoints": 10
+        },
+	    "resources": 450000
+	},
+    "b": {
+		"metatype": {
+            "human": {
+                "special": 7
+            },
+            "elf": {
+                "special": 6
+            },
+            "dwarf": {
+                "special": 4
+            },
+            "ork": {
+                "special": 4
+            },
+            "troll": {
+                "special": 0
+            }
+        },
+    	"attibutes": 20,
+    	"magic": {
             "mage": {
                 "magic": 4,
                 "skills": {
@@ -143,7 +116,29 @@
                 }
             }
         },
-        "c": {
+        "skills": {
+            "skillpoints": 36,
+            "grouppoints": 5
+        },
+	    "resources": 275000
+    },
+    "c": {
+		"metatype": {
+            "human": {
+                "special": 5
+            },
+            "elf": {
+                "special": 3
+            },
+            "dwarf": {
+                "special": 1
+            },
+            "ork": {
+                "special": 0
+            }
+        },
+	    "attibutes": 16,
+	    "magic": {
             "mage": {
                 "magic": 3,
                 "spells": 5
@@ -172,7 +167,23 @@
                 }
             }
         },
-        "d": {
+        "skills": {
+            "skillpoints": 28,
+            "grouppoints": 2
+        },
+	    "resources": 140000
+    },
+    "d": {
+		"metatype": {
+            "human": {
+                "special": 3
+            },
+            "elf": {
+                "special": 0
+            }
+        },
+    	"attibutes": 14,
+    	"magic": {
             "adept": {
                 "magic": 2
             },
@@ -180,39 +191,28 @@
                 "magic": 2
             }
         },
-        "e": {
+        "skills": {
+            "skillpoints": 22,
+            "grouppoints": 0
+        },
+	    "resources": 50000
+    },
+    "e": {
+		"metatype": {
+            "human": {
+                "special": 1
+            }
+        },
+    	"attibutes": 12,
+    	"magic": {
             "mundane": {
                 "nothing": "–"
             }
-        }
-    },
-    "skills": {
-        "a": {
-            "skills": 46,
-            "skillgroups": 10
         },
-        "b": {
-            "skills": 36,
-            "skillgroups": 5
+        "skills": {
+            "skillpoints": 18,
+            "grouppoints": 0
         },
-        "c": {
-            "skills": 28,
-            "skillgroups": 2
-        },
-        "d": {
-            "skills": 22,
-            "skillgroups": 0
-        },
-        "e": {
-            "skills": 18,
-            "skillgroups": 0
-        }
-    },
-    "resources": {
-        "a": 450000,
-        "b": 275000,
-        "c": 140000,
-        "d": 50000,
-        "e": 6000
+	    "resources": 6000
     }
 }

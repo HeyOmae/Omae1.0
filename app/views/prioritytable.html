@@ -1,1 +1,50 @@
-<p>This is the priorityTable view.</p>
+<table class="table-bordered col-sm-12 priority-table">
+	<tr>
+		<th>Metatype</th>
+		<th>Att</th>
+		<th>Magic/Resonance</th>
+		<th>Skills</th>
+		<th>Resources</th>
+	</tr>
+
+	<tr ng-repeat="data in priorityData">
+		<td class="metatype">
+			<p class="text-center" ng-repeat="(metatype, special) in data.metatype">
+				<span class={{metatype}}>{{metatype}}</span>
+				<span class="special"> ({{special.special}})</span>
+				<span ng-show="special.karma" class="karmaCost">Karma: {{special.karma}}</span>
+			</p>
+		</td>
+
+		<td class="attibutes text-center">{{data.attibutes}}</td>
+
+		<td class="magic">
+			<dl ng-repeat="(type, details) in data.magic" class="dl-horizontal">
+				<dt>{{type}}</dt>
+				<dd>
+					<p class="special-attibute">
+						<span ng-if="details.magic"><strong>Magic:</strong> {{details.magic}}</span>
+						<span ng-if="details.resonance"><strong>Resonance:</strong> {{details.resonance}}</span>
+						<span ng-if="details.nothing">Jack and Squat at the Rating of zilch</span>
+					</p>
+					<p class="free-skills">
+						<span ng-if="details.skills">{{details.skills.ammount}} {{details.skills.attibute}} skills at Rating {{details.skills.rating}}</span>
+						<span ng-if="details.skillgroup">{{details.skillgroup.ammount}} {{details.skillgroup.attibute}} skillgroup at Rating {{details.skillgroup.rating}}</span>
+					</p>
+					<p class="free-spells">
+						<span ng-if="details.spells">Spells: {{details.spells}}</span>
+						<span ng-if="details.complexform">Complex Forms: {{details.complexform}}</span>
+					</p>
+				</dd>
+			</dl>
+		</td>
+
+		<td class="skills text-center">
+			{{data.skills.skillpoints}}/{{data.skills.grouppoints}}
+		</td>
+
+		<td class="resources text-center">
+			{{data.resources}}&yen;
+		</td>
+	</tr>
+</table>
