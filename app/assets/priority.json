@@ -15,6 +15,10 @@
             },
             "troll": {
                 "special": 5
+            },
+            "nartaki": {
+                "special": 8,
+                "karma": 0
             }
 		},
 	    "attibutes": 24,
