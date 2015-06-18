@@ -9,10 +9,27 @@
  */
 angular.module('heyOmaegithubioApp')
   .controller('PrioritytableCtrl', function ($scope, $http) {
-    $http.get('../assets/priority.json').success(function (data, status, headers, config) {
+
+  	//load priority data
+    $http.get('../assets/priority.json').success(function (data) {
     	$scope.priorityData = data;
-    	console.log($scope.priorityData);
     }).error(function (data, status){
-		alert("Error status : " + status);
+		console.log('Error status : ' + status);
 	});
+
+    //load metatype data
+    $http.get('../assets/metatype.json').success(function (data) {
+    	$scope.metatypes = data;
+
+		$scope.selected = {
+			item: $scope.metatypes.human
+		};
+
+    }).error(function (data, status){
+		console.log('Error status : ' + status);
+	});
+
+
+    //placeholder data for modal
+
   });

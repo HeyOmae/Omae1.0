@@ -1,14 +1,14 @@
-<table class="table-bordered col-sm-12 priority-table">
-	<tr>
+<table class="table-bordered col-md-12 priority-table">
+	<tr class="text-center">
 		<th>Metatype</th>
-		<th>Att</th>
+		<th>Attributes</th>
 		<th>Magic/Resonance</th>
 		<th>Skills</th>
 		<th>Resources</th>
 	</tr>
 
-	<tr ng-repeat="data in priorityData">
-		<td class="metatype">
+	<tr ng-repeat="(priority, data) in priorityData" class={{priority}}>
+		<td class="metatype" metatype-selector>
 			<p class="text-center" ng-repeat="(metatype, special) in data.metatype">
 				<span class={{metatype}}>{{metatype}}</span>
 				<span class="special"> ({{special.special}})</span>

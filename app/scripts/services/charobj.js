@@ -10,12 +10,23 @@
 angular.module('heyOmaegithubioApp')
   .factory('CharObj', function () {
     // Service logic
-    // ...
+    var metatype = 'human';
+
 
     // Public API here
     return {
-      someMethod: function () {
-        return meaningOfLife;
+      //getter
+      get: {
+        metatype: function() {
+          return metatype;
+        }
+      },
+
+      //setter
+      set: {
+        metatype: function(type) {
+          metatype = type;
+        }
       }
     };
   });

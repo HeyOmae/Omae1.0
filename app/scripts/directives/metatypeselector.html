@@ -1,0 +1,16 @@
+<div class="modal-header">
+    <h3 class="modal-title">Select your Metatype</h3>
+</div>
+<div class="modal-body">
+    <ul>
+        <li ng-repeat="(type, stats) in metatypes">
+            <input type="radio" ng-model="metatypes.name" value="red">
+            <a ng-click="selected.item = type">{{ type }}</a>
+        </li>
+    </ul>
+    Selected: <b>{{ selected.type }}</b>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" ng-click="ok()">OK</button>
+    <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+</div>

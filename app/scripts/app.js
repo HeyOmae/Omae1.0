@@ -12,7 +12,8 @@ angular
   .module('heyOmaegithubioApp', [
     'ngAnimate',
     'ngRoute',
-    'ngSanitize'
+    'ngSanitize',
+    'ui.bootstrap'
   ])
   .config(function ($routeProvider) {
     $routeProvider
