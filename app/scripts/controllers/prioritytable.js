@@ -10,6 +10,14 @@
 angular.module('heyOmaegithubioApp')
   .controller('PrioritytableCtrl', function ($scope, $http) {
 
+  	$scope.selected = {
+		metatype: {
+			type: 'human',
+			priority: null,
+			special: null
+		}
+	};
+
   	//load priority data
     $http.get('../assets/priority.json').success(function (data) {
     	$scope.priorityData = data;
@@ -21,8 +29,13 @@ angular.module('heyOmaegithubioApp')
     $http.get('../assets/metatype.json').success(function (data) {
     	$scope.metatypes = data;
 
-		$scope.selected = {
-			item: $scope.metatypes.human
+		$scope.ok = function () {
+			console.log('should close');
+		    $scope.modalInstance.close($scope.selected.metatype);
+		};
+
+		$scope.cancel = function () {
+		    $scope.modalInstance.dismiss('cancel');
 		};
 
     }).error(function (data, status){

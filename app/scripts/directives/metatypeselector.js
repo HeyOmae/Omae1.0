@@ -16,7 +16,11 @@ angular.module('heyOmaegithubioApp')
 
       		console.log(attrs);
 
-			var modalInstance = $modal.open({
+      		//set selected
+      		scope.selected.metatype.priority = element.parent().attr('class');
+      		scope.selected.metatype.special = scope.priorityData[scope.selected.metatype.priority].metatype[scope.selected.metatype.type].special;
+
+			scope.modalInstance = $modal.open({
 				animation: true,
 				templateUrl: 'scripts/directives/metatypeselector.html',
 				controller: 'PrioritytableCtrl',
@@ -27,20 +31,20 @@ angular.module('heyOmaegithubioApp')
 				}
 			});
 
-			modalInstance.result.then(function (selectedItem) {
+			scope.modalInstance.result.then(function (selectedItem) {
 				scope.selected = selectedItem;
 			}, function () {
 				$log.info('Modal dismissed at: ' + new Date());
 			});
 
-			scope.ok = function () {
-				console.log('should close');
-			    modalInstance.close(scope.selected.item);
-			};
+			// scope.ok = function () {
+			// 	console.log('should close');
+			//     modalInstance.close(scope.selected.item);
+			// };
 
-			scope.cancel = function () {
-			    modalInstance.dismiss('cancel');
-			};
+			// scope.cancel = function () {
+			//     modalInstance.dismiss('cancel');
+			// };
 		}
 
       	element.on('mousedown', openModal);
