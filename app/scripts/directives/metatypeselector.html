@@ -8,7 +8,7 @@
             <label for="{{type}}">{{ type }}</label>
         </li>
     </ul>
-    Selected: <b>{{ selected.metatype.type }} ({{priorityData.a.metatype[selected.metatype.type].special}})</b>
+    Selected:{{selected.metatype.priority}} <b>{{ selected.metatype.type }} ({{priorityData[selected.metatype.priority].metatype[selected.metatype.type].special}})</b>
 </div>
 <div class="modal-footer">
     <button class="btn btn-primary" ng-click="ok()">OK</button>

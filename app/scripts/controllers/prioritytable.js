@@ -30,17 +30,33 @@ angular.module('heyOmaegithubioApp')
     	$scope.metatypes = data;
 
 		$scope.ok = function () {
-			console.log('should close');
-		    $scope.modalInstance.close($scope.selected.metatype);
+			console.log($scope);
+		//    $scope.modalInstance.close($scope.selected.metatype);
 		};
 
-		$scope.cancel = function () {
-		    $scope.modalInstance.dismiss('cancel');
-		};
+		// $scope.cancel = function () {
+		//     $scope.modalInstance.dismiss('cancel');
+		// };
 
     }).error(function (data, status){
 		console.log('Error status : ' + status);
 	});
+
+	$scope.setValue = {
+		metatype: {
+			type: function(type) {
+				$scope.selected.metatype.type = type;
+			},
+			priority: function(priority) {
+				console.log('set priority to '+priority);
+				$scope.selected.metatype.priority = priority;
+				console.log($scope);
+			},
+			special: function (points) {
+				$scope.selected.metatype.special = points;
+			}
+		}
+	};
 
 
     //placeholder data for modal
