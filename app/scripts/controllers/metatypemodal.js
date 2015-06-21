@@ -15,6 +15,7 @@ angular.module('heyOmaegithubioApp')
   		console.log($modalInstance);
 
     $scope.ok = function () {
+    	console.log('still there');
 		$modalInstance.close($scope.selected);
 	};
 

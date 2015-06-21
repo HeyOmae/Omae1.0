@@ -18,9 +18,39 @@ angular.module('heyOmaegithubioApp')
 	};
 
 	$scope.modal = {
-		// metatype: function () {
-		// 	console.log('open');
-		// }
+		metatype: function($event) {
+
+    		var selectedPriority = $event.currentTarget.parentElement.className;
+
+    		$scope.selected.metatype.priority = selectedPriority;
+
+	    	var modalInstance = $modal.open({
+				animation: false,
+				templateUrl: 'views/modal/metatypeselector.html',
+				controller: 'MetatypemodalCtrl',
+				resolve: {
+					metatypes: function() {
+						return $scope.metatypes;
+					},
+					metatypeSpecial: function() {
+						return $scope.priorityData[selectedPriority].metatype;
+					},
+					selected: function () {
+						return $scope.selected.metatype;
+					}
+				}
+			});
+
+			modalInstance.result.then(function (selectedItem) {
+				$scope.selected.metatype = selectedItem;
+				console.log('close damn it!');
+				// $('.modal.fade.ng-isolate-scope').remove();
+				// $('.modal-backdrop.fade.in').remove();
+			}, function () {
+				$log.info('Modal dismissed at: ' + new Date());
+			});
+
+    	}
 	};
 
   	//load priority data
@@ -34,41 +64,6 @@ angular.module('heyOmaegithubioApp')
     $http.get('../assets/metatype.json').success(function (data) {
 
     	$scope.metatypes = data;
-
-    	$scope.modal.metatype = function($event) {
-
-    		var selectedPriority = $event.currentTarget.parentElement.className;
-
-    		$scope.selected.metatype.priority = selectedPriority;
-
-	    	var modalInstance = $modal.open({
-				animation: true,
-				templateUrl: 'views/modal/metatypeselector.html',
-				controller: 'MetatypemodalCtrl',
-				resolve: {
-					metatypes: function() {
-						return data;
-					},
-					metatypeSpecial: function() {
-						return $scope.priorityData[selectedPriority].metatype;
-					},
-					selected: function () {
-						return $scope.selected.metatype;
-					}
-				}
-			});
-
-			modalInstance.result.then(function (selectedItem) {
-				$scope.selected.metatype = selectedItem;
-			}, function () {
-				$log.info('Modal dismissed at: ' + new Date());
-			});
-
-			$scope.toggleAnimation = function () {
-				$scope.animationsEnabled = !$scope.animationsEnabled;
-			};
-
-    	};
 
     }).error(function (data, status){
 		console.log('Error status : ' + status);
