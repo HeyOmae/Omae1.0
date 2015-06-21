@@ -8,7 +8,7 @@
 	</tr>
 
 	<tr ng-repeat="(priority, data) in priorityData" class={{priority}}>
-		<td class="metatype" metatype-selector priority-metatype-data="data.metatype" set="selected.metatype" ng-click="selected.metatype.OpenModal">
+		<td class="metatype" ng-click="modal.metatype($event)">
 			<p class="text-center" ng-repeat="(metatype, special) in data.metatype">
 				<span class={{metatype}}>{{metatype}}</span>
 				<span class="special"> ({{special.special}})</span>

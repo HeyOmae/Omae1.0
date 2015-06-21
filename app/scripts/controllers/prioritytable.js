@@ -8,7 +8,7 @@
  * Controller of the heyOmaegithubioApp
  */
 angular.module('heyOmaegithubioApp')
-  .controller('PrioritytableCtrl', function ($scope, $http) {
+  .controller('PrioritytableCtrl', function ($scope, $http, $modal, $log) {
 
   	$scope.selected = {
 		metatype: {
@@ -16,6 +16,12 @@ angular.module('heyOmaegithubioApp')
 			priority: null,
 			special: null
 		}
+	};
+
+	$scope.modal = {
+		// metatype: function () {
+		// 	console.log('open');
+		// }
 	};
 
   	//load priority data
@@ -27,36 +33,59 @@ angular.module('heyOmaegithubioApp')
 
     //load metatype data
     $http.get('../assets/metatype.json').success(function (data) {
+
     	$scope.metatypes = data;
 
-		$scope.ok = function () {
-			console.log($scope);
-		//    $scope.modalInstance.close($scope.selected.metatype);
-		};
+    	$scope.modal.metatype = function($event) {
 
-		// $scope.cancel = function () {
-		//     $scope.modalInstance.dismiss('cancel');
-		// };
+    		var selectedPriority = $event.currentTarget.parentElement.className;
+
+    		$scope.selected.metatype.priority = selectedPriority;
+
+	    	var modalInstance = $modal.open({
+				animation: true,
+				templateUrl: 'views/modal/metatypeselector.html',
+				controller: 'MetatypemodalCtrl',
+				resolve: {
+					metatypes: function() {
+						return data;
+					},
+					metatypeSpecial: function() {
+						return $scope.priorityData[selectedPriority].metatype;
+					},
+					selected: function () {
+						return $scope.selected.metatype;
+					}
+				}
+			});
+
+			modalInstance.result.then(function (selectedItem) {
+				$scope.selected.metatype.type = selectedItem;
+			}, function () {
+				$log.info('Modal dismissed at: ' + new Date());
+			});
+
+    	};
 
     }).error(function (data, status){
 		console.log('Error status : ' + status);
 	});
 
-	$scope.setValue = {
-		metatype: {
-			type: function(type) {
-				$scope.selected.metatype.type = type;
-			},
-			priority: function(priority) {
-				console.log('set priority to '+priority);
-				$scope.selected.metatype.priority = priority;
-				console.log($scope);
-			},
-			special: function (points) {
-				$scope.selected.metatype.special = points;
-			}
-		}
-	};
+	// $scope.setValue = {
+	// 	metatype: {
+	// 		type: function(type) {
+	// 			$scope.selected.metatype.type = type;
+	// 		},
+	// 		priority: function(priority) {
+	// 			console.log('set priority to '+priority);
+	// 			$scope.selected.metatype.priority = priority;
+	// 			console.log($scope);
+	// 		},
+	// 		special: function (points) {
+	// 			$scope.selected.metatype.special = points;
+	// 		}
+	// 	}
+	// };
 
 
     //placeholder data for modal

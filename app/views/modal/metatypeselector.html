@@ -4,11 +4,11 @@
 <div class="modal-body">
     <ul>
         <li ng-repeat="(type, stats) in metatypes">
-            <input id="{{type}}" name="metatype" type="radio" ng-model="selected.metatype.type" value="{{type}}">
+            <input id="{{type}}" name="metatype" type="radio" ng-model="selected.type" value="{{type}}">
             <label for="{{type}}">{{ type }}</label>
         </li>
     </ul>
-    Selected:{{selected.metatype.priority}} <b>{{ selected.metatype.type }} ({{priorityData[selected.metatype.priority].metatype[selected.metatype.type].special}})</b>
+    Selected:{{selected.priority}} <b>{{ selected.type }} ({{special[selected.type].special}})</b>
 </div>
 <div class="modal-footer">
     <button class="btn btn-primary" ng-click="ok()">OK</button>
