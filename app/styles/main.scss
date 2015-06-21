@@ -67,6 +67,15 @@ body {
   }
 }
 
+/*Modal Styles*/
+
+/*Metatype Modal*/
+.metatype-modal {
+  .radio input[type="radio"] {
+    margin-top: 14px;
+  }
+}
+
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   .container {

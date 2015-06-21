@@ -12,10 +12,10 @@ angular.module('heyOmaegithubioApp')
   		$scope.metatypes = metatypes;
   		$scope.selected = selected;
   		$scope.special = metatypeSpecial;
-		console.log(metatypeSpecial);
+  		console.log($modalInstance);
 
     $scope.ok = function () {
-		$modalInstance.close(selected);
+		$modalInstance.close($scope.selected);
 	};
 
 	$scope.cancel = function () {

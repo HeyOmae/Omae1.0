@@ -1,16 +1,52 @@
-<div class="modal-header">
-    <h3 class="modal-title">Select your Metatype</h3>
-</div>
-<div class="modal-body">
-    <ul>
-        <li ng-repeat="(type, stats) in metatypes">
-            <input id="{{type}}" name="metatype" type="radio" ng-model="selected.type" value="{{type}}">
-            <label for="{{type}}">{{ type }}</label>
-        </li>
-    </ul>
-    Selected:{{selected.priority}} <b>{{ selected.type }} ({{special[selected.type].special}})</b>
-</div>
-<div class="modal-footer">
-    <button class="btn btn-primary" ng-click="ok()">OK</button>
-    <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+<div class="metatype-modal">
+    <div class="modal-header">
+        <h3 class="modal-title">Select your Metatype</h3>
+    </div>
+    <div class="modal-body">
+        <ul class="list-unstyled">
+            <li ng-repeat="(type, stats) in metatypes">
+
+                <div >
+                    
+                </div> 
+
+                <div ng-class="{disabled: !special[type], 'has-error':  !special[selected.type] && !special[type]}" class="radio">
+                    <label for="{{type}}">
+                        <input id="{{type}}" name="metatype" type="radio" ng-model="selected.type" value="{{type}}" ng-disabled="{{!special[type]}}">
+                        <h4>{{ type }}</h4>
+                    </label>
+
+                    <table class="col-md-12">
+                        <tr>
+                            <th class="text-center">Bod</th>
+                            <th class="text-center">Agi</th>
+                            <th class="text-center">Rea</th>
+                            <th class="text-center">Str</th>
+                            <th class="text-center">Wil</th>
+                            <th class="text-center">Log</th>
+                            <th class="text-center">Int</th>
+                            <th class="text-center">Cha</th>
+                            <th class="text-center">Edg</th>
+                        </tr>
+                        <tr>
+                            <td class="text-center">{{stats.min.bod}}/{{stats.max.bod}}</td>
+                            <td class="text-center">{{stats.min.agi}}/{{stats.max.agi}}</td>
+                            <td class="text-center">{{stats.min.rea}}/{{stats.max.rea}}</td>
+                            <td class="text-center">{{stats.min.str}}/{{stats.max.str}}</td>
+                            <td class="text-center">{{stats.min.wil}}/{{stats.max.wil}}</td>
+                            <td class="text-center">{{stats.min.log}}/{{stats.max.log}}</td>
+                            <td class="text-center">{{stats.min.int}}/{{stats.max.int}}</td>
+                            <td class="text-center">{{stats.min.cha}}/{{stats.max.cha}}</td>
+                            <td class="text-center">{{stats.min.edg}}/{{stats.max.edg}}</td>
+                        </tr>
+                    </table>
+                </div>
+            </li>
+        </ul>
+        Selected:{{selected.priority}} <b>{{ selected.type }} ({{special[selected.type].special}})</b>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" ng-click="ok()">OK</button>
+        <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+    </div>
 </div>

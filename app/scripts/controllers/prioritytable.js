@@ -12,9 +12,8 @@ angular.module('heyOmaegithubioApp')
 
   	$scope.selected = {
 		metatype: {
-			type: 'human',
-			priority: null,
-			special: null
+			type: 'troll',
+			priority: null
 		}
 	};
 
@@ -60,10 +59,14 @@ angular.module('heyOmaegithubioApp')
 			});
 
 			modalInstance.result.then(function (selectedItem) {
-				$scope.selected.metatype.type = selectedItem;
+				$scope.selected.metatype = selectedItem;
 			}, function () {
 				$log.info('Modal dismissed at: ' + new Date());
 			});
+
+			$scope.toggleAnimation = function () {
+				$scope.animationsEnabled = !$scope.animationsEnabled;
+			};
 
     	};
 
@@ -71,23 +74,5 @@ angular.module('heyOmaegithubioApp')
 		console.log('Error status : ' + status);
 	});
 
-	// $scope.setValue = {
-	// 	metatype: {
-	// 		type: function(type) {
-	// 			$scope.selected.metatype.type = type;
-	// 		},
-	// 		priority: function(priority) {
-	// 			console.log('set priority to '+priority);
-	// 			$scope.selected.metatype.priority = priority;
-	// 			console.log($scope);
-	// 		},
-	// 		special: function (points) {
-	// 			$scope.selected.metatype.special = points;
-	// 		}
-	// 	}
-	// };
-
-
-    //placeholder data for modal
 
   });
