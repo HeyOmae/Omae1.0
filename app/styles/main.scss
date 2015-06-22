@@ -3,6 +3,8 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 // endbower
 
+$disabled-color: #ababab;
+
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
@@ -67,6 +69,11 @@ body {
   }
 }
 
+/*Priority Table Styling*/
+.priority-table td {
+  cursor: pointer;
+}
+
 /*Modal Styles*/
 
 /*Metatype Modal*/
@@ -74,6 +81,11 @@ body {
   .radio input[type="radio"] {
     margin-top: 14px;
   }
+}
+
+/*disabled styling*/
+.disabled label {
+  color: $disabled-color;
 }
 
 /* Responsive: Portrait tablets and up */
