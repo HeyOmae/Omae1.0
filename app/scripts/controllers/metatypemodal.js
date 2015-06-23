@@ -14,7 +14,9 @@ angular.module('heyOmaegithubioApp')
   		$scope.special = metatypeSpecial;
 
     $scope.ok = function () {
-		$modalInstance.close($scope.selected);
+    	if ($scope.special[$scope.selected.type]){
+			$modalInstance.close($scope.selected);
+    	}
 	};
 
 	$scope.cancel = function () {
