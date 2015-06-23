@@ -12,10 +12,8 @@ angular.module('heyOmaegithubioApp')
   		$scope.metatypes = metatypes;
   		$scope.selected = selected;
   		$scope.special = metatypeSpecial;
-  		console.log($modalInstance);
 
     $scope.ok = function () {
-    	console.log('still there');
 		$modalInstance.close($scope.selected);
 	};
 

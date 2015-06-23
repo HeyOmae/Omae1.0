@@ -11,10 +11,9 @@ angular.module('heyOmaegithubioApp')
     return {
       templateUrl: 'views/activenav.html',
       restrict: 'E',
-      link: function postLink(scope, element) {
+      link: function postLink(scope) {
       	scope.isActive = function (viewLocation) {
 			var active = (viewLocation === $location.path());
-			console.log(active);
 			return active;
 		};
       }

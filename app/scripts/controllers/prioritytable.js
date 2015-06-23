@@ -43,9 +43,6 @@ angular.module('heyOmaegithubioApp')
 
 			modalInstance.result.then(function (selectedItem) {
 				$scope.selected.metatype = selectedItem;
-				console.log('close damn it!');
-				// $('.modal.fade.ng-isolate-scope').remove();
-				// $('.modal-backdrop.fade.in').remove();
 			}, function () {
 				$log.info('Modal dismissed at: ' + new Date());
 			});
@@ -66,7 +63,7 @@ angular.module('heyOmaegithubioApp')
     	$scope.metatypes = data;
 
     }).error(function (data, status){
-		console.log('Error status : ' + status);
+		$log.debug('Error status : ' + status);
 	});
 
 
