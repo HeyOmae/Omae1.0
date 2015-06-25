@@ -8,7 +8,12 @@
 	</tr>
 
 	<tr ng-repeat="(priority, data) in priorityData" class={{priority}}>
-		<td class="metatype" ng-click="modal.metatype($event)">
+		<td class="metatype" ng-click="modal.metatype($event)" ng-class="
+				selected.metatype.priority === priority ?
+				'active' :
+				(selected.metatype.type ?
+				'not-active' :
+				'')">
 			<p class="text-center" ng-repeat="(metatype, special) in data.metatype">
 				<span class={{metatype}}>{{metatype}}</span>
 				<span class="special"> ({{special.special}})</span>

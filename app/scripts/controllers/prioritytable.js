@@ -12,8 +12,10 @@ angular.module('heyOmaegithubioApp')
 
   	$scope.selected = {
 		metatype: {
-			type: 'troll',
-			priority: null
+			type: null,
+			priority: null,
+			oldType: null,
+			oldPriority: null
 		}
 	};
 
@@ -42,8 +44,12 @@ angular.module('heyOmaegithubioApp')
 			});
 
 			modalInstance.result.then(function (selectedItem) {
+				$scope.selected.metatype.oldType = $scope.selected.metatype.type;
+				$scope.selected.metatype.oldPriority = $scope.selected.metatype.priority;
 				$scope.selected.metatype = selectedItem;
 			}, function () {
+				$scope.selected.metatype.type = $scope.selected.metatype.oldType;
+				$scope.selected.metatype.priority = $scope.selected.metatype.oldPriority;
 				$log.info('Modal dismissed at: ' + new Date());
 			});
 

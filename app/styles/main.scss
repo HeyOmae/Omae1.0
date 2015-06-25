@@ -4,6 +4,8 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 // endbower
 
 $disabled-color: #ababab;
+$active: red;
+$not-active: blue;
 
 .browsehappy {
   margin: 0.2em 0;
@@ -72,6 +74,14 @@ body {
 /*Priority Table Styling*/
 .priority-table td {
   cursor: pointer;
+}
+
+.active {
+  background: $active;
+}
+
+.not-active {
+  background: $not-active;
 }
 
 /*Modal Styles*/
