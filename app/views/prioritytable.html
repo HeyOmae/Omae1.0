@@ -8,7 +8,7 @@
 	</tr>
 
 	<tr ng-repeat="(priority, data) in priorityData" class={{priority}}>
-		<td class="metatype" ng-click="modal.metatype($event)" ng-class="
+		<td class="metatype" metatype-selector priority-data="priorityData" metatypes="metatypes" ng-class="
 				selected.metatype.priority === priority ?
 				'active' :
 				(selected.metatype.type ?

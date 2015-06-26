@@ -7,44 +7,51 @@
  * # metatypeSelector
  */
 angular.module('heyOmaegithubioApp')
-  .directive('metatypeSelector', function () {
+  .directive('metatypeSelector', function ($modal, $log, CharObj) {
     return {
       restrict: 'A',
       scope: {
-      	priorityMetatypeData: '=',
-      	set: '='
+      	priorityData: '=',
+      	metatypes: '='
       },
-      link: function postLink (scope, element, attrs) {
+      link: function postLink ($scope, element) {
 
-      	scope.set.openModal = function() {
-      		console.log('put open modal code here');
-      	};
+  		$scope.selected = CharObj.selected;
 
-        function openModal() {
+      	var openModal = function() {
 
-      		console.log(attrs);
+    		$scope.selected.metatype.priority = element.context.parentElement.className;
 
-      		//set selected
-			// scope.$apply(function () {
-	  //     		var priorityLevel = element.parent().attr('class');
-	  //     		scope.set.priority = priorityLevel;
-	  //     		scope.set.special = scope.priorityMetatypeData[scope.set.type].special;
-	  //     		console.log(scope.set.priority);
-			// });
+	    	var modalInstance = $modal.open({
+				animation: false,
+				templateUrl: 'views/modal/metatypeselector.html',
+				controller: 'MetatypemodalCtrl',
+				resolve: {
+					metatypes: function() {
+						return $scope.metatypes;
+					},
+					metatypeSpecial: function() {
+						return $scope.priorityData[$scope.selected.metatype.priority].metatype;
+					},
+					selected: function () {
+						return $scope.selected.metatype;
+					}
+				}
+			});
 
-			
+			modalInstance.result.then(function (selectedItem) {
+				$scope.selected.metatype.oldType = $scope.selected.metatype.type;
+				$scope.selected.metatype.oldPriority = $scope.selected.metatype.priority;
+				$scope.selected.metatype = selectedItem;
+			}, function () {
+				$scope.selected.metatype.type = $scope.selected.metatype.oldType;
+				$scope.selected.metatype.priority = $scope.selected.metatype.oldPriority;
+				$log.info('Modal dismissed at: ' + new Date());
+			});
 
-			
+    	};
 
-			// scope.ok = function () {
-			// 	console.log('should close');
-			//     scope.modalInstance.close(scope.selected.item);
-			// };
-
-			// scope.cancel = function () {
-			//     scope.modalInstance.dismiss('cancel');
-			// };
-		}
+    	
 
       	element.click(openModal);
 

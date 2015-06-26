@@ -17,39 +17,7 @@ angular.module('heyOmaegithubioApp')
 	};
 
 	$scope.modal = {
-		metatype: function($event) {
-
-    		$scope.selected.metatype.priority = selectedPriority($event);
-
-	    	var modalInstance = $modal.open({
-				animation: false,
-				templateUrl: 'views/modal/metatypeselector.html',
-				controller: 'MetatypemodalCtrl',
-				resolve: {
-					metatypes: function() {
-						return $scope.metatypes;
-					},
-					metatypeSpecial: function() {
-						return $scope.priorityData[$scope.selected.metatype.priority].metatype;
-					},
-					selected: function () {
-						return $scope.selected.metatype;
-					}
-				}
-			});
-
-			modalInstance.result.then(function (selectedItem) {
-				$scope.selected.metatype.oldType = $scope.selected.metatype.type;
-				$scope.selected.metatype.oldPriority = $scope.selected.metatype.priority;
-				$scope.selected.metatype = selectedItem;
-			}, function () {
-				$scope.selected.metatype.type = $scope.selected.metatype.oldType;
-				$scope.selected.metatype.priority = $scope.selected.metatype.oldPriority;
-				$log.info('Modal dismissed at: ' + new Date());
-			});
-
-    	},
-    	attibutes: function($event) {
+		attibutes: function($event) {
     		$scope.selected.attibutes.priority = selectedPriority($event);
     	}
 	};
