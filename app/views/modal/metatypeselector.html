@@ -43,7 +43,8 @@
                 </div>
             </li>
         </ul>
-        Selected:{{selected.priority}} <b>{{ selected.type }} ({{special[selected.type].special}})</b>
+        <span ng-show="special[selected.type]">Selected: <b>{{ selected.type }} ({{special[selected.type].special}})</b></span>
+        <span ng-hide="special[selected.type]" class="has-error">Selected Avalible Metatype.</span>
     </div>
     <div class="modal-footer">
         <button class="btn btn-primary" ng-click="ok()">OK</button>

@@ -8,23 +8,18 @@
  * Controller of the heyOmaegithubioApp
  */
 angular.module('heyOmaegithubioApp')
-  .controller('PrioritytableCtrl', function ($scope, $http, $modal, $log) {
+  .controller('PrioritytableCtrl', function ($scope, $http, $modal, $log, CharObj) {
 
-  	$scope.selected = {
-		metatype: {
-			type: null,
-			priority: null,
-			oldType: null,
-			oldPriority: null
-		}
+  	$scope.selected = CharObj.selected;
+
+	var selectedPriority = function(e) {
+		return e.currentTarget.parentElement.className;
 	};
 
 	$scope.modal = {
 		metatype: function($event) {
 
-    		var selectedPriority = $event.currentTarget.parentElement.className;
-
-    		$scope.selected.metatype.priority = selectedPriority;
+    		$scope.selected.metatype.priority = selectedPriority($event);
 
 	    	var modalInstance = $modal.open({
 				animation: false,
@@ -35,7 +30,7 @@ angular.module('heyOmaegithubioApp')
 						return $scope.metatypes;
 					},
 					metatypeSpecial: function() {
-						return $scope.priorityData[selectedPriority].metatype;
+						return $scope.priorityData[$scope.selected.metatype.priority].metatype;
 					},
 					selected: function () {
 						return $scope.selected.metatype;
@@ -53,6 +48,9 @@ angular.module('heyOmaegithubioApp')
 				$log.info('Modal dismissed at: ' + new Date());
 			});
 
+    	},
+    	attibutes: function($event) {
+    		$scope.selected.attibutes.priority = selectedPriority($event);
     	}
 	};
 

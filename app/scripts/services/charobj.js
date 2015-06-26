@@ -10,22 +10,26 @@
 angular.module('heyOmaegithubioApp')
   .factory('CharObj', function () {
     // Service logic
-    var metatype = 'human';
-
+    var selected = {
+      metatype: {
+        type: null,
+        priority: null,
+        oldType: null,
+        oldPriority: null
+      },
+      attibutes: {
+        totalPoints: null,
+        spent: null
+      }
+    };
 
     // Public API here
     return {
-      //getter
+      selected: selected,
+
       get: {
         metatype: function() {
-          return metatype;
-        }
-      },
-
-      //setter
-      set: {
-        metatype: function(type) {
-          metatype = type;
+          return selected.metatype.type;
         }
       }
     };
