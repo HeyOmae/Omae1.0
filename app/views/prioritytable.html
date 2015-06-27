@@ -28,7 +28,13 @@
 		<td class="attibutes text-center" 
 			attibutes-selector
 			stats="metatypes[selected.metatype.type]"
-			attribute-points="data.attibutes">
+			attribute-points="data.attibutes"
+			ng-class="
+				selected.attributes.priority === priority ?
+				'active' :
+				(selected.attributes.totalPoints ?
+				'not-active' :
+				'')">
 			{{data.attibutes}}
 		</td>
 

@@ -2,9 +2,9 @@
 
 /**
  * @ngdoc function
- * @name heyOmaegithubioApp.controller:AttibutesmodalCtrl
+ * @name heyOmaegithubioApp.controller:AttributesmodalCtrl
  * @description
- * # AttibutesmodalCtrl
+ * # AttributesmodalCtrl
  * Controller of the heyOmaegithubioApp
  */
 angular.module('heyOmaegithubioApp')
