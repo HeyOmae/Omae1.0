@@ -4,7 +4,7 @@
     </div>
     <div class="modal-body">
 
-        <div>
+        <div ng-show="stats">
 
             <p ng-class="spentPoints() > selected.totalPoints ? 'has-error' : ''">
                 Attribute Points: {{spentPoints()}}/{{selected.totalPoints}}
@@ -49,28 +49,36 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="text-center">
+                    <td class="text-center" 
+                        ng-class="isOver('bod') ? 'has-error' : ''">
                         {{stats.min.bod+selected.spent.bod}}/{{stats.max.bod}}
                     </td>
-                    <td class="text-center">
+                    <td class="text-center"
+                        ng-class="isOver('agi') ? 'has-error' : ''">
                         {{stats.min.agi+selected.spent.agi}}/{{stats.max.agi}}
                     </td>
-                    <td class="text-center">
+                    <td class="text-center"
+                        ng-class="isOver('rea') ? 'has-error' : ''">
                         {{stats.min.rea+selected.spent.rea}}/{{stats.max.rea}}
                     </td>
-                    <td class="text-center">
+                    <td class="text-center"
+                        ng-class="isOver('str') ? 'has-error' : ''">
                         {{stats.min.str+selected.spent.str}}/{{stats.max.str}}
                     </td>
-                    <td class="text-center">
+                    <td class="text-center"
+                        ng-class="isOver('wil') ? 'has-error' : ''">
                         {{stats.min.wil+selected.spent.wil}}/{{stats.max.wil}}
                     </td>
-                    <td class="text-center">
+                    <td class="text-center"
+                        ng-class="isOver('log') ? 'has-error' : ''">
                         {{stats.min.log+selected.spent.log}}/{{stats.max.log}}
                     </td>
-                    <td class="text-center">
+                    <td class="text-center"
+                        ng-class="isOver('int') ? 'has-error' : ''">
                         {{stats.min.int+selected.spent.int}}/{{stats.max.int}}
                     </td>
-                    <td class="text-center">
+                    <td class="text-center"
+                        ng-class="isOver('cha') ? 'has-error' : ''">
                         {{stats.min.cha+selected.spent.cha}}/{{stats.max.cha}}
                     </td>
                 </tr>
@@ -103,6 +111,10 @@
 
             </table>
 
+        </div>
+
+        <div ng-hide="stats" class="has-error">
+            <p>Select a Metatype first.</p>
         </div>
 
     </div>

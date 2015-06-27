@@ -24,10 +24,14 @@ angular.module('heyOmaegithubioApp')
   		return total;
   	}
 
+  	function findCurrentAttibute(attribute) {
+  		return selected.spent[attribute]+stats.min[attribute];
+  	}
+
   	$scope.spentPoints = spentPoints;
 
   	$scope.raise = function(attribute) {
-  		var currentAttibute = selected.spent[attribute]+stats.min[attribute],
+  		var currentAttibute = findCurrentAttibute(attribute),
   			lowerMax = stats.max[attribute]-1;
 
   		function checkAndRaise(max) {
@@ -55,15 +59,54 @@ angular.module('heyOmaegithubioApp')
   	$scope.lower = function(attribute) {
 
   		if(selected.spent[attribute] > 0) {
-	  		if(selected.spent[attribute]+stats.min[attribute] === stats.max[attribute]) {
+	  		if(findCurrentAttibute(attribute) === stats.max[attribute]) {
 	  			maxAttribute = false;
 	  		}
   			selected.spent[attribute]--;
   		}
   	};
 
+  	$scope.isOver = function(attribute) {
+  		if (findCurrentAttibute(attribute) > stats.max[attribute]) {
+  			return true;
+  		} else {
+  			return false;
+  		}
+  	};
+
     $scope.ok = function () {
-		$modalInstance.close(selected);
+    	function attributeIsNotOver() {
+    		for (var attribute in selected.spent) {
+    			if ($scope.isOver(attribute)) {
+    				return false;
+    			}
+    		}
+    		return true;
+    	}
+
+	  	function isThereOnlyOneMax() {
+	  		var maxAttributes = [];
+	  		for (var attribute in selected.spent) {
+	  			if (findCurrentAttibute(attribute) >= stats.max[attribute]) {
+	  				maxAttributes.push(attribute);
+	  			}
+	  		}
+
+	  		if (maxAttributes.length > 1){
+	  			return false;
+	  		} else {
+	  			return true;
+	  		}
+	  	}
+
+    	var Over = attributeIsNotOver(),
+    		lessThanOneMax = isThereOnlyOneMax();
+
+    	if (lessThanOneMax && Over) {
+    		$modalInstance.close(selected);
+    	} else {
+    		return null;
+    	}
     };
 
   	$scope.cancel = function () {
