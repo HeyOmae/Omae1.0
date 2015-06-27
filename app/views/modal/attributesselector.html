@@ -50,35 +50,35 @@
                 </tr>
                 <tr>
                     <td class="text-center" 
-                        ng-class="isOver('bod') ? 'has-error' : ''">
+                        ng-class="isOver('bod') || multiMax('bod') ? 'has-error' : ''">
                         {{stats.min.bod+selected.spent.bod}}/{{stats.max.bod}}
                     </td>
                     <td class="text-center"
-                        ng-class="isOver('agi') ? 'has-error' : ''">
+                        ng-class="isOver('agi') || multiMax('agi') ? 'has-error' : ''">
                         {{stats.min.agi+selected.spent.agi}}/{{stats.max.agi}}
                     </td>
                     <td class="text-center"
-                        ng-class="isOver('rea') ? 'has-error' : ''">
+                        ng-class="isOver('rea') || multiMax('rea') ? 'has-error' : ''">
                         {{stats.min.rea+selected.spent.rea}}/{{stats.max.rea}}
                     </td>
                     <td class="text-center"
-                        ng-class="isOver('str') ? 'has-error' : ''">
+                        ng-class="isOver('str') || multiMax('str') ? 'has-error' : ''">
                         {{stats.min.str+selected.spent.str}}/{{stats.max.str}}
                     </td>
                     <td class="text-center"
-                        ng-class="isOver('wil') ? 'has-error' : ''">
+                        ng-class="isOver('wil') || multiMax('wil') ? 'has-error' : ''">
                         {{stats.min.wil+selected.spent.wil}}/{{stats.max.wil}}
                     </td>
                     <td class="text-center"
-                        ng-class="isOver('log') ? 'has-error' : ''">
+                        ng-class="isOver('log') || multiMax('log') ? 'has-error' : ''">
                         {{stats.min.log+selected.spent.log}}/{{stats.max.log}}
                     </td>
                     <td class="text-center"
-                        ng-class="isOver('int') ? 'has-error' : ''">
+                        ng-class="isOver('int') || multiMax('int') ? 'has-error' : ''">
                         {{stats.min.int+selected.spent.int}}/{{stats.max.int}}
                     </td>
                     <td class="text-center"
-                        ng-class="isOver('cha') ? 'has-error' : ''">
+                        ng-class="isOver('cha') || multiMax('cha') ? 'has-error' : ''">
                         {{stats.min.cha+selected.spent.cha}}/{{stats.max.cha}}
                     </td>
                 </tr>

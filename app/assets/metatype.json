@@ -26,6 +26,10 @@
 			"vision": "Thermographic",
 			"toxic resistance": 2,
 			"lifestyle": 20
+		},
+		"reference": {
+			"book": "SR",
+			"page": "66"
 		}
 	},
 
@@ -54,6 +58,10 @@
 		},
 		"racial": {
 			"vision": "Low-light"
+		},
+		"reference": {
+			"book": "SR",
+			"page": "66"
 		}
 	},
 
@@ -82,6 +90,10 @@
 		},
 		"racial": {
 			"nothing": "Nadda"
+		},
+		"reference": {
+			"book": "SR",
+			"page": "66"
 		}
 	},
 
@@ -110,6 +122,10 @@
 		},
 		"racial": {
 			"vision": "Low-light"
+		},
+		"reference": {
+			"book": "SR",
+			"page": "66"
 		}
 	},
 
@@ -141,6 +157,10 @@
 			"reach": 1,
 			"armor": 1,
 			"lifestyle": 100
+		},
+		"reference": {
+			"book": "SR",
+			"page": "66"
 		}
 	}
 }

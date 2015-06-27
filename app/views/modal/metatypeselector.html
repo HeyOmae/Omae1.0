@@ -13,8 +13,9 @@
                 <div ng-class="{disabled: !special[type], 'has-error':  !special[selected.type] && !special[type]}" class="radio">
                     <label for="{{type}}">
                         <input id="{{type}}" name="metatype" type="radio" ng-model="selected.type" value="{{type}}" ng-disabled="{{!special[type]}}">
-                        <h4>{{ type }}</h4>
+                        <h4>{{ type }} ({{special[type].special}})</h4>
                     </label>
+                        <span>{{stats.reference.book}} p{{stats.reference.page}}</span>
 
                     <table class="col-md-12">
                         <tr>

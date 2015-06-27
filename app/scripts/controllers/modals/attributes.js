@@ -74,6 +74,19 @@ angular.module('heyOmaegithubioApp')
   		}
   	};
 
+  	$scope.multiMax = function(attribute) {
+  		var currentAttibute = findCurrentAttibute(attribute);
+  		if(currentAttibute === stats.max[attribute]) {
+  			for (var att in selected.spent) {
+  				if (attribute !== att && findCurrentAttibute(att) === stats.max[att]) {
+  					return true;
+  				}
+  			}
+  		}
+  		return false;
+  		
+  	};
+
     $scope.ok = function () {
     	function attributeIsNotOver() {
     		for (var attribute in selected.spent) {
