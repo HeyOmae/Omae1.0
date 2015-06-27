@@ -6,6 +6,7 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 $disabled-color: #ababab;
 $active: red;
 $not-active: blue;
+$error-color: #a94442;
 
 .browsehappy {
   margin: 0.2em 0;
@@ -71,6 +72,11 @@ body {
   }
 }
 
+/*Extend Bootstrap*/
+.has-error {
+  color: $error-color;
+}
+
 /*Priority Table Styling*/
 .priority-table td {
   cursor: pointer;
@@ -85,6 +91,9 @@ body {
 }
 
 /*Modal Styles*/
+.modal-body {
+  overflow: hidden;
+}
 
 /*Metatype Modal*/
 .metatype-modal {

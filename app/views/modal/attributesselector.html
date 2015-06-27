@@ -1,0 +1,113 @@
+<div class="metatype-modal">
+    <div class="modal-header">
+        <h3 class="modal-title">Distribute Attibute Points</h3>
+    </div>
+    <div class="modal-body">
+
+        <div>
+
+            <p ng-class="spentPoints() > selected.totalPoints ? 'has-error' : ''">
+                Attribute Points: {{spentPoints()}}/{{selected.totalPoints}}
+            </p>
+
+            <table class="col-md-12">
+
+                <tr>
+                    <th class="text-center">Bod</th>
+                    <th class="text-center">Agi</th>
+                    <th class="text-center">Rea</th>
+                    <th class="text-center">Str</th>
+                    <th class="text-center">Wil</th>
+                    <th class="text-center">Log</th>
+                    <th class="text-center">Int</th>
+                    <th class="text-center">Cha</th>
+                </tr>
+                <tr>
+                    <td class="text-center">
+                        <button ng-click="raise('bod')">+</button>
+                    </td>
+                    <td class="text-center">
+                        <button ng-click="raise('agi')">+</button>
+                    </td>
+                    <td class="text-center">
+                        <button ng-click="raise('rea')">+</button>
+                    </td>
+                    <td class="text-center">
+                        <button ng-click="raise('str')">+</button>
+                    </td>
+                    <td class="text-center">
+                        <button ng-click="raise('wil')">+</button>
+                    </td>
+                    <td class="text-center">
+                        <button ng-click="raise('log')">+</button>
+                    </td>
+                    <td class="text-center">
+                        <button ng-click="raise('int')">+</button>
+                    </td>
+                    <td class="text-center">
+                        <button ng-click="raise('cha')">+</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-center">
+                        {{stats.min.bod+selected.spent.bod}}/{{stats.max.bod}}
+                    </td>
+                    <td class="text-center">
+                        {{stats.min.agi+selected.spent.agi}}/{{stats.max.agi}}
+                    </td>
+                    <td class="text-center">
+                        {{stats.min.rea+selected.spent.rea}}/{{stats.max.rea}}
+                    </td>
+                    <td class="text-center">
+                        {{stats.min.str+selected.spent.str}}/{{stats.max.str}}
+                    </td>
+                    <td class="text-center">
+                        {{stats.min.wil+selected.spent.wil}}/{{stats.max.wil}}
+                    </td>
+                    <td class="text-center">
+                        {{stats.min.log+selected.spent.log}}/{{stats.max.log}}
+                    </td>
+                    <td class="text-center">
+                        {{stats.min.int+selected.spent.int}}/{{stats.max.int}}
+                    </td>
+                    <td class="text-center">
+                        {{stats.min.cha+selected.spent.cha}}/{{stats.max.cha}}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-center">
+                        <button ng-click="lower('bod')">-</button>
+                    </td>
+                    <td class="text-center">
+                        <button ng-click="lower('agi')">-</button>
+                    </td>
+                    <td class="text-center">
+                        <button ng-click="lower('rea')">-</button>
+                    </td>
+                    <td class="text-center">
+                        <button ng-click="lower('str')">-</button>
+                    </td>
+                    <td class="text-center">
+                        <button ng-click="lower('wil')">-</button>
+                    </td>
+                    <td class="text-center">
+                        <button ng-click="lower('log')">-</button>
+                    </td>
+                    <td class="text-center">
+                        <button ng-click="lower('int')">-</button>
+                    </td>
+                    <td class="text-center">
+                        <button ng-click="lower('cha')">-</button>
+                    </td>
+                </tr>
+
+            </table>
+
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" ng-click="ok()">OK</button>
+        <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+    </div>
+</div>

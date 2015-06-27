@@ -8,7 +8,11 @@
 	</tr>
 
 	<tr ng-repeat="(priority, data) in priorityData" class={{priority}}>
-		<td class="metatype" metatype-selector priority-data="priorityData" metatypes="metatypes" ng-class="
+		<td class="metatype" 
+			metatype-selector 
+			priority-data="priorityData" 
+			metatypes="metatypes" 
+			ng-class="
 				selected.metatype.priority === priority ?
 				'active' :
 				(selected.metatype.type ?
@@ -21,7 +25,12 @@
 			</p>
 		</td>
 
-		<td class="attibutes text-center">{{data.attibutes}}</td>
+		<td class="attibutes text-center" 
+			attibutes-selector
+			stats="metatypes[selected.metatype.type]"
+			attribute-points="data.attibutes">
+			{{data.attibutes}}
+		</td>
 
 		<td class="magic">
 			<dl ng-repeat="(type, details) in data.magic" class="dl-horizontal">

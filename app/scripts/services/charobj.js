@@ -12,14 +12,36 @@ angular.module('heyOmaegithubioApp')
     // Service logic
     var selected = {
       metatype: {
-        type: null,
-        priority: null,
+        type: 'troll',
+        priority: 'a',
         oldType: null,
         oldPriority: null
       },
-      attibutes: {
+      attributes: {
+        priority: null,
+        oldPriority: null,
         totalPoints: null,
-        spent: null
+        oldTotalPoints: null,
+        spent: {
+          bod: 0,
+          agi: 0,
+          rea: 0,
+          str: 0,
+          wil: 0,
+          log: 0,
+          int: 0,
+          cha: 0
+        },
+        oldSpent: {
+          bod: 0,
+          agi: 0,
+          rea: 0,
+          str: 0,
+          wil: 0,
+          log: 0,
+          int: 0,
+          cha: 0
+        }
       }
     };
 

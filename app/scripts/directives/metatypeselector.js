@@ -46,7 +46,7 @@ angular.module('heyOmaegithubioApp')
 			}, function () {
 				$scope.selected.metatype.type = $scope.selected.metatype.oldType;
 				$scope.selected.metatype.priority = $scope.selected.metatype.oldPriority;
-				$log.info('Modal dismissed at: ' + new Date());
+				$log.info('Metatype Modal dismissed at: ' + new Date());
 			});
 
     	};
