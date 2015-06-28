@@ -113,9 +113,9 @@ angular.module('heyOmaegithubioApp')
 	  	}
 
     	var Over = attributeIsNotOver(),
-    		lessThanOneMax = isThereOnlyOneMax();
+  		  lessThanOneMax = isThereOnlyOneMax();
 
-    	if (lessThanOneMax && Over) {
+    	if (lessThanOneMax && Over && selected.totalPoints >= spentPoints()) {
     		$modalInstance.close(selected);
     	} else {
     		return null;

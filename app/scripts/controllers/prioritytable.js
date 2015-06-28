@@ -12,21 +12,11 @@ angular.module('heyOmaegithubioApp')
 
   	$scope.selected = CharObj.selected;
 
-	var selectedPriority = function(e) {
-		return e.currentTarget.parentElement.className;
-	};
-
-	$scope.modal = {
-		attibutes: function($event) {
-    		$scope.selected.attibutes.priority = selectedPriority($event);
-    	}
-	};
-
   	//load priority data
     $http.get('../assets/priority.json').success(function (data) {
     	$scope.priorityData = data;
     }).error(function (data, status){
-		console.log('Error status : ' + status);
+		console.log('Error loading Priority Data : ' + status);
 	});
 
     //load metatype data
@@ -35,7 +25,16 @@ angular.module('heyOmaegithubioApp')
     	$scope.metatypes = data;
 
     }).error(function (data, status){
-		$log.debug('Error status : ' + status);
+		$log.debug('Error loading the Metatypes : ' + status);
+	});
+
+    //load skills data
+    $http.get('../assets/skills.json').success(function (data) {
+
+    	$scope.activeSkills = data;
+
+    }).error(function (data, status){
+		$log.debug('Error Loading the skills : ' + status);
 	});
 
 
