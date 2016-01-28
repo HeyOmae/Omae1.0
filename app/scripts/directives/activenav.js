@@ -13,9 +13,9 @@ angular.module('heyOmaegithubioApp')
       restrict: 'E',
       link: function postLink(scope) {
       	scope.isActive = function (viewLocation) {
-			var active = (viewLocation === $location.path());
-			return active;
-		};
+    			var active = (viewLocation === $location.path());
+    			return active;
+		    };
       }
     };
   });

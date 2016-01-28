@@ -2,223 +2,223 @@
 	"a": {
 		"metatype": {
 			"human": {
-                "special": 9
-            },
-            "elf": {
-                "special": 8
-            },
-            "dwarf": {
-                "special": 7
-            },
-            "ork": {
-                "special": 7
-            },
-            "troll": {
-                "special": 5
-            },
-            "nartaki": {
-                "special": 8,
-                "karma": 0
-            }
+				"special": 9
+			},
+			"elf": {
+				"special": 8
+			},
+			"dwarf": {
+				"special": 7
+			},
+			"ork": {
+				"special": 7
+			},
+			"troll": {
+				"special": 5
+			},
+			"nartaki": {
+				"special": 8,
+				"karma": 0
+			}
 		},
-        
-	    "attibutes": 24,
+		
+		"attibutes": 24,
 
-	    "magic": {
-            "mage": {
-                "magic": 6,
-                "skills": {
-                    "attibute": "magic",
-                    "rating": 5,
-                    "ammount": 2
-                },
-                "spells": 10
-            },
-            "mystic": {
-                "magic": 6,
-                "skills": {
-                    "attibute": "magic",
-                    "rating": 5,
-                    "ammount": 2
-                },
-                "spells": 10
-            },
-            "technomancer": {
-                "resonance": 6,
-                "skills": {
-                    "attibute": "resonance",
-                    "rating": 5,
-                    "ammount": 2
-                },
-                "complexform": 5
-            }
-        },
-        "skills": {
-            "skillpoints": 46,
-            "grouppoints": 10
-        },
-	    "resources": 450000
+		"magic": {
+			"mage": {
+				"magic": 6,
+				"skills": {
+					"attibute": "magic",
+					"rating": 5,
+					"ammount": 2
+				},
+				"spells": 10
+			},
+			"mystic": {
+				"magic": 6,
+				"skills": {
+					"attibute": "magic",
+					"rating": 5,
+					"ammount": 2
+				},
+				"spells": 10
+			},
+			"technomancer": {
+				"resonance": 6,
+				"skills": {
+					"attibute": "resonance",
+					"rating": 5,
+					"ammount": 2
+				},
+				"complexform": 5
+			}
+		},
+		"skills": {
+			"skillpoints": 46,
+			"grouppoints": 10
+		},
+		"resources": 450000
 	},
-    "b": {
+	"b": {
 		"metatype": {
-            "human": {
-                "special": 7
-            },
-            "elf": {
-                "special": 6
-            },
-            "dwarf": {
-                "special": 4
-            },
-            "ork": {
-                "special": 4
-            },
-            "troll": {
-                "special": 0
-            }
-        },
-    	"attibutes": 20,
-    	"magic": {
-            "mage": {
-                "magic": 4,
-                "skills": {
-                    "attibute": "magic",
-                    "rating": 4,
-                    "ammount": 2
-                },
-                "spells": 7
-            },
-            "mystic": {
-                "magic": 4,
-                "skills": {
-                    "attibute": "magic",
-                    "rating": 4,
-                    "ammount": 2
-                },
-                "spells": 7
-            },
-            "technomancer": {
-                "resonance": 4,
-                "skills": {
-                    "attibute": "resonance",
-                    "rating": 4,
-                    "ammount": 2
-                },
-                "complexform": 2
-            },
-            "adept": {
-                "magic": 6,
-                "skills": {
-                    "rating": 4,
-                    "ammount": 1
-                }
-            },
-            "aspected": {
-                "magic": 5,
-                "skillgroup": {
-                    "attibute": "magic",
-                    "rating": 4,
-                    "ammount": 1
-                }
-            }
-        },
-        "skills": {
-            "skillpoints": 36,
-            "grouppoints": 5
-        },
-	    "resources": 275000
-    },
-    "c": {
+			"human": {
+				"special": 7
+			},
+			"elf": {
+				"special": 6
+			},
+			"dwarf": {
+				"special": 4
+			},
+			"ork": {
+				"special": 4
+			},
+			"troll": {
+				"special": 0
+			}
+		},
+		"attibutes": 20,
+		"magic": {
+			"mage": {
+				"magic": 4,
+				"skills": {
+					"attibute": "magic",
+					"rating": 4,
+					"ammount": 2
+				},
+				"spells": 7
+			},
+			"mystic": {
+				"magic": 4,
+				"skills": {
+					"attibute": "magic",
+					"rating": 4,
+					"ammount": 2
+				},
+				"spells": 7
+			},
+			"technomancer": {
+				"resonance": 4,
+				"skills": {
+					"attibute": "resonance",
+					"rating": 4,
+					"ammount": 2
+				},
+				"complexform": 2
+			},
+			"adept": {
+				"magic": 6,
+				"skills": {
+					"rating": 4,
+					"ammount": 1
+				}
+			},
+			"aspected": {
+				"magic": 5,
+				"skillgroup": {
+					"attibute": "magic",
+					"rating": 4,
+					"ammount": 1
+				}
+			}
+		},
+		"skills": {
+			"skillpoints": 36,
+			"grouppoints": 5
+		},
+		"resources": 275000
+	},
+	"c": {
 		"metatype": {
-            "human": {
-                "special": 5
-            },
-            "elf": {
-                "special": 3
-            },
-            "dwarf": {
-                "special": 1
-            },
-            "ork": {
-                "special": 0
-            }
-        },
-	    "attibutes": 16,
-	    "magic": {
-            "mage": {
-                "magic": 3,
-                "spells": 5
-            },
-            "mystic": {
-                "magic": 3,
-                "spells": 5
-            },
-            "technomancer": {
-                "resonance": 3,
-                "complexform": 1
-            },
-            "adept": {
-                "magic": 4,
-                "skills": {
-                    "rating": 2,
-                    "ammount": 1
-                }
-            },
-            "aspected": {
-                "magic": 3,
-                "skillgroup": {
-                    "attibute": "magic",
-                    "rating": 2,
-                    "ammount": 1
-                }
-            }
-        },
-        "skills": {
-            "skillpoints": 28,
-            "grouppoints": 2
-        },
-	    "resources": 140000
-    },
-    "d": {
+			"human": {
+				"special": 5
+			},
+			"elf": {
+				"special": 3
+			},
+			"dwarf": {
+				"special": 1
+			},
+			"ork": {
+				"special": 0
+			}
+		},
+		"attibutes": 16,
+		"magic": {
+			"mage": {
+				"magic": 3,
+				"spells": 5
+			},
+			"mystic": {
+				"magic": 3,
+				"spells": 5
+			},
+			"technomancer": {
+				"resonance": 3,
+				"complexform": 1
+			},
+			"adept": {
+				"magic": 4,
+				"skills": {
+					"rating": 2,
+					"ammount": 1
+				}
+			},
+			"aspected": {
+				"magic": 3,
+				"skillgroup": {
+					"attibute": "magic",
+					"rating": 2,
+					"ammount": 1
+				}
+			}
+		},
+		"skills": {
+			"skillpoints": 28,
+			"grouppoints": 2
+		},
+		"resources": 140000
+	},
+	"d": {
 		"metatype": {
-            "human": {
-                "special": 3
-            },
-            "elf": {
-                "special": 0
-            }
-        },
-    	"attibutes": 14,
-    	"magic": {
-            "adept": {
-                "magic": 2
-            },
-            "aspected": {
-                "magic": 2
-            }
-        },
-        "skills": {
-            "skillpoints": 22,
-            "grouppoints": 0
-        },
-	    "resources": 50000
-    },
-    "e": {
+			"human": {
+				"special": 3
+			},
+			"elf": {
+				"special": 0
+			}
+		},
+		"attibutes": 14,
+		"magic": {
+			"adept": {
+				"magic": 2
+			},
+			"aspected": {
+				"magic": 2
+			}
+		},
+		"skills": {
+			"skillpoints": 22,
+			"grouppoints": 0
+		},
+		"resources": 50000
+	},
+	"e": {
 		"metatype": {
-            "human": {
-                "special": 1
-            }
-        },
-    	"attibutes": 12,
-    	"magic": {
-            "mundane": {
-                "nothing": "–"
-            }
-        },
-        "skills": {
-            "skillpoints": 18,
-            "grouppoints": 0
-        },
-	    "resources": 6000
-    }
+			"human": {
+				"special": 1
+			}
+		},
+		"attibutes": 12,
+		"magic": {
+			"mundane": {
+				"nothing": "–"
+			}
+		},
+		"skills": {
+			"skillpoints": 18,
+			"grouppoints": 0
+		},
+		"resources": 6000
+	}
 }

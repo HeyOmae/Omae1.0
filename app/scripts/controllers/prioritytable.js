@@ -37,5 +37,27 @@ angular.module('heyOmaegithubioApp')
 		$log.debug('Error Loading the skills : ' + status);
 	});
 
+// 	$scope.solution = function (S, T) {
+    
+//     if(S === T) {
+//         return 'NOTHING';
+//     } else {
+//         for(var i=0, len=S.length; i<len; ++i) {
+//             if (S.charAt(i) !== T.charAt(i)) {
+
+//                 if(S.slice(0,i)+S.slice(i+1) === T) {
+//                    return 'DELETE '+S.charAt(i);
+//                 } else if (S.slice(0, i)+ T.charAt(i) + S.slice(i) === T) {
+//                    return 'INSERT '+T.charAt(i);
+//                 } else if ( S.charAt( T.search(S.charAt(i)) ) === T.charAt(i) && S.charAt(i) === T.charAt(S.search(T.charAt(i)))) {
+//                 	return 'SWAP '+S.charAt(i) +' '+ S.charAt( T.search(S.charAt(i)) );
+//                 }
+//             }
+//         }
+//     }
+
+//     return 'IMPOSSIBLE';
+// };
+
 
   });
